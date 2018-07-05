@@ -30,7 +30,7 @@
 
   roles:
     - wtanaka.unzip
-    - zanini.sonar
+    - geerlingguy.sonar
 
 - name: On Premises CentOS
   hosts: tag_ansible_group_webserver
