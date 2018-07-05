@@ -1,2 +1,4 @@
 - src: geerlingguy.repo-epel
 - src: geerlingguy.git
+- src: tecris.maven
+- src: geerlingguy.ansible
