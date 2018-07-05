@@ -1,0 +1,25 @@
+---
+- name: Install Java
+  hosts: tag_ansible_group_webserver
+  roles:
+    - geerlingguy.java
+
+- name: Download Application from Repo
+  hosts: tag_ansible_group_webserver
+  tasks:
+    - get_url:
+        force: yes
+        url: "{{ lookup('env','ARTIFACT_URL') }}"
+        dest: "/tmp/{{ lookup('env','APP_NAME') }}.jar"
+    - stat:
+        path: "/tmp/{{ lookup('env','APP_NAME') }}.jar"
+
+- name: Setup Spring Boot
+  hosts: tag_ansible_group_webserver
+
+  roles:
+    - { role: pellepelster.springboot-role,
+        spring_boot_file: "{{ lookup('env','APP_NAME') }}.jar",
+        spring_boot_file_source: "/tmp/{{ lookup('env','APP_NAME') }}.jar",
+        spring_boot_application_id: "{{ lookup('env','APP_NAME') }}"
+    }
