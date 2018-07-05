@@ -7,4 +7,5 @@
 - src: savoirfairelinux.nexus3-oss
 - src: wtanaka.unzip
 - src: geerlingguy.sonar
+- src: pellepelster.springboot-role
 #- src: jenkins-keys-config
