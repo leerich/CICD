@@ -12,7 +12,7 @@
   roles:
     - geerlingguy.jenkins
     - geerlingguy.repo-epel
-    - geerlingguy.git
+    #- geerlingguy.git
     - tecris.maven
     - geerlingguy.ansible
 
