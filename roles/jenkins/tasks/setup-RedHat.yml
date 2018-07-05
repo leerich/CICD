@@ -5,6 +5,7 @@
       - curl
       - libselinux-python
       - initscripts
+      - java-1.8.0-openjdk.x86_64
     state: present
 
 - name: Ensure Jenkins repo is installed.
