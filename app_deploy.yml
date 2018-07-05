@@ -1,11 +1,11 @@
 ---
 - name: Install Java
-  hosts: tag_ansible_group_webserver
+  hosts: tag_ansible_group_webservers
   roles:
     - geerlingguy.java
 
 - name: Download Application from Repo
-  hosts: tag_ansible_group_webserver
+  hosts: tag_ansible_group_webservers
   tasks:
     - get_url:
         force: yes
@@ -15,7 +15,7 @@
         path: "/tmp/{{ lookup('env','APP_NAME') }}.jar"
 
 - name: Setup Spring Boot
-  hosts: tag_ansible_group_webserver
+  hosts: tag_ansible_group_webservers
 
   roles:
     - { role: pellepelster.springboot-role,
