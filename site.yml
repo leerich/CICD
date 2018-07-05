@@ -20,7 +20,7 @@
   hosts: tag_ansible_group_nexus
 
   roles:
-    - geerlingguy.java
+    - { role: geerlingguy.java, java_packages: java-1.8.0-openjdk.x86_64 }
     - savoirfairelinux.nexus3-oss
 
 - name: Deploy Sonar Server
