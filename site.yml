@@ -2,7 +2,6 @@
 
 - name: Configure Jenkins server
   hosts: tag_ansible_group_jenkins
-  remote_user: ec2-user
   become: true
   tasks:
     - name: install git only if it is not already installed
@@ -16,3 +15,28 @@
     - geerlingguy.git
     - tecris.maven
     - geerlingguy.ansible
+
+- name: Deploy Nexus Server
+hosts: tag_ansible_group_nexus
+become: yes
+
+roles:
+  - geerlingguy.java
+  - savoirfairelinux.nexus3-oss
+
+- name: Deploy Sonar Server
+hosts: sonar_server
+remote_user: vagrant
+become: yes
+
+roles:
+  - wtanaka.unzip
+  - zanini.sonar
+
+- name: On Premises CentOS
+hosts: app_server
+remote_user: vagrant
+become: yes
+
+roles:
+  - jenkins-keys-config
