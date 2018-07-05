@@ -13,7 +13,7 @@
     - geerlingguy.jenkins
     - geerlingguy.repo-epel
     #- geerlingguy.git
-    - tecris.maven
+    - { role: tecris.maven, maven_version: 3.5.4 }
     - geerlingguy.ansible
 
 - name: Deploy Nexus Server
