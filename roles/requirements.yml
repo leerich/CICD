@@ -6,5 +6,5 @@
 - src: geerlingguy.java
 - src: savoirfairelinux.nexus3-oss
 - src: wtanaka.unzip
-- src: zanini.sonar
+- src: geerlingguy.sonar
 #- src: jenkins-keys-config
