@@ -1,15 +1,7 @@
 ---
-- name: Start of CIDC Workflow
-  hosts: localhost
-  gather_facts: false
-
-  roles:
-    - deploy_instance
-
-
 
 - name: Configure Jenkins server
-  hosts: CICD_Linux_Jenkins
+  hosts: jenkins
   remote_user: ec2-user
   become: true
   tasks:
