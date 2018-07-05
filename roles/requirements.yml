@@ -2,3 +2,8 @@
 - src: geerlingguy.git
 - src: tecris.maven
 - src: geerlingguy.ansible
+- src: geerlingguy.java
+- src: savoirfairelinux.nexus3-oss
+- src: wtanaka.unzip
+- src: zanini.sonar
+- src: jenkins-keys-config

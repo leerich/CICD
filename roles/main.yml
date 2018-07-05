@@ -1,0 +1,8 @@
+---
+- name: restart_guacamole
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items:
+    - guacd
+    - tomcat

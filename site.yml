@@ -17,26 +17,24 @@
     - geerlingguy.ansible
 
 - name: Deploy Nexus Server
-hosts: tag_ansible_group_nexus
-become: yes
+  hosts: tag_ansible_group_nexus
+  become: yes
 
-roles:
-  - geerlingguy.java
-  - savoirfairelinux.nexus3-oss
+  roles:
+    - geerlingguy.java
+    - savoirfairelinux.nexus3-oss
 
 - name: Deploy Sonar Server
-hosts: sonar_server
-remote_user: vagrant
-become: yes
+  hosts: tag_ansible_group_sonar
+  become: yes
 
-roles:
-  - wtanaka.unzip
-  - zanini.sonar
+  roles:
+    - wtanaka.unzip
+    - zanini.sonar
 
 - name: On Premises CentOS
-hosts: app_server
-remote_user: vagrant
-become: yes
+  hosts: tag_ansible_group_webserver
+  become: yes
 
-roles:
-  - jenkins-keys-config
+  roles:
+    - jenkins-keys-config
