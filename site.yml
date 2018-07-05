@@ -2,7 +2,7 @@
 
 - name: Configure Jenkins server
   hosts: tag_ansible_group_jenkins
-  become: true
+  #become: true
   tasks:
     - name: install git only if it is not already installed
       yum:
@@ -18,7 +18,6 @@
 
 - name: Deploy Nexus Server
   hosts: tag_ansible_group_nexus
-  become: yes
 
   roles:
     - geerlingguy.java
@@ -26,7 +25,6 @@
 
 - name: Deploy Sonar Server
   hosts: tag_ansible_group_sonar
-  become: yes
 
   roles:
     - wtanaka.unzip
@@ -34,7 +32,6 @@
 
 - name: On Premises CentOS
   hosts: tag_ansible_group_webserver
-  become: yes
 
   roles:
     - jenkins-keys-config
