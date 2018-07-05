@@ -1,7 +1,7 @@
 ---
 
 - name: Configure Jenkins server
-  hosts: jenkins
+  hosts: tag_ansible_group_jenkins
   remote_user: ec2-user
   become: true
   tasks:
