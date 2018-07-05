@@ -1,6 +1,9 @@
 ---
-
-- hosts: all
-
+- name: Start of CIDC Workflow
+  hosts: localhost
+  gather_facts: false
+  
   roles:
-  - geerlingguy.gitlab
+    - deploy_instance
+    
+   
