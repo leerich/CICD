@@ -31,7 +31,7 @@
     - geerlingguy.sonar
 
 - name: On Premises CentOS
-  hosts: tag_ansible_group_webserver
+  hosts: tag_ansible_group_webservers
 
   roles:
     - jenkins-keys-config
