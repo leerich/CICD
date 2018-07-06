@@ -10,7 +10,7 @@
         state=present
 
   roles:
-    - geerlingguy.jenkins
+    - jenkins
     - geerlingguy.repo-epel
     #- geerlingguy.git
     - { role: tecris.maven, maven_version: 3.5.4 }
